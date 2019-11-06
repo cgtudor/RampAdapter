@@ -17,10 +17,6 @@ public class RampAdapterTest {
     
     public RampAdapterTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
 
     //The Id is the first number found inside the serial number.
     @Test

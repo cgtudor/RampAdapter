@@ -44,7 +44,7 @@ public class AirportStaticRamp implements AirportRamp{
 
     @Override
     public String detach() {
-        if(isAvailable)
+        if(isAvailable == true)
             return null;
         isAvailable = true;
         return "Ramp detached...";
