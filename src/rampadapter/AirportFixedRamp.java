@@ -9,13 +9,13 @@ package rampadapter;
  *
  * @author v8002382
  */
-public class AirportStaticRamp implements AirportRamp{
+public class AirportFixedRamp implements AirportRamp{
 
     private String serialNumber;
     private String parkingBay;
     private boolean isAvailable;
 
-    public AirportStaticRamp(String serialNumber, String parkingBay) {
+    public AirportFixedRamp(String serialNumber, String parkingBay) {
         this.serialNumber = serialNumber;
         this.parkingBay = parkingBay;
         isAvailable = true;

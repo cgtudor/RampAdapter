@@ -28,6 +28,7 @@ public class AirportMobileRamp implements AirportRamp{
 
     @Override
     public String deploy() {
+        
         isAvailable = false;
         return "GPS Updated and driver notified...";
     }

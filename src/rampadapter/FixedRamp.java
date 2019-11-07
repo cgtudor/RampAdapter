@@ -23,11 +23,13 @@ public class FixedRamp implements Ramp{
     
     @Override
     public int getId() {
-        return id;
+        return Math.abs(id);
     }
 
     @Override
     public String dispatch() {
+        if(isDispatched)
+            return null;
         isDispatched = true;
         return "Ramp safety security module released. Commencing dispatch.";
     }
@@ -39,7 +41,7 @@ public class FixedRamp implements Ramp{
 
     @Override
     public int getParkingBayNumber() {
-        return parkingBayNumber;
+        return Math.abs(parkingBayNumber);
     }
 
     @Override

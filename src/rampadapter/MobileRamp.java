@@ -23,11 +23,13 @@ public class MobileRamp implements Ramp{
     
     @Override
     public int getId() {
-        return id;
+        return Math.abs(id);
     }
 
     @Override
     public String dispatch() {
+        if(isDispatched)
+            return null;
         isDispatched = true;
         return "Ramp driver notified of destination. Commencing transport.";
     }
@@ -39,7 +41,7 @@ public class MobileRamp implements Ramp{
 
     @Override
     public int getParkingBayNumber() {
-        return parkingBayNumber;
+        return Math.abs(parkingBayNumber);
     }
 
     @Override

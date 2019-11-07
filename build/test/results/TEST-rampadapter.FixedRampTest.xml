@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="TU46993" name="rampadapter.RampAdapterTest" skipped="0" tests="12" time="0.195" timestamp="2019-11-07T00:01:14">
+<testsuite errors="0" failures="0" hostname="TU46993" name="rampadapter.FixedRampTest" skipped="0" tests="12" time="0.162" timestamp="2019-11-07T00:01:11">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -56,7 +56,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rampadapter.RampAdapterTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,U:\AJP\RampAdapter\build\test\results\TEST-rampadapter.RampAdapterTest.xml crashfile=U:\AJP\RampAdapter\build\junitvmwatcher50381930943442615.properties propsfile=U:\AJP\RampAdapter\build\junit8799370818207719485.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner rampadapter.FixedRampTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,U:\AJP\RampAdapter\build\test\results\TEST-rampadapter.FixedRampTest.xml crashfile=U:\AJP\RampAdapter\build\junitvmwatcher3611050531114915961.properties propsfile=U:\AJP\RampAdapter\build\junit5886611600358452944.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -403,30 +403,30 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="rampadapter.RampAdapterTest" name="testGetId" time="0.012" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testGetParkingBayNumber" time="0.001" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testNullGetParkingBayNumber" time="0.0" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testWithdraw" time="0.0" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testDispatch" time="0.0" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testInvalidGetParkingBayNumber" time="0.0" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testSideBySide" time="0.002" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testInvalidGetId" time="0.001" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testNullGetId" time="0.001" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testInvalidWithdraw" time="0.0" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testMultipleNumbersGetId" time="0.0" />
-  <testcase classname="rampadapter.RampAdapterTest" name="testIsDispatched" time="0.0" />
-  <system-out><![CDATA[Id test OK
-ParkingBayNumber test OK
-InvalidParkingBayNumber test OK
+  <testcase classname="rampadapter.FixedRampTest" name="testIsDispatchedAtCreation" time="0.003" />
+  <testcase classname="rampadapter.FixedRampTest" name="testGetId" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testGetParkingBayNumber" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testWithdraw" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testGetNegativeParkingBayNumber" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testIsDispatchedAfterDeployAndWithdraw" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testDispatchAfterDispatch" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testDispatch" time="0.001" />
+  <testcase classname="rampadapter.FixedRampTest" name="testWithdrawAfterWithdraw" time="0.001" />
+  <testcase classname="rampadapter.FixedRampTest" name="testIsDispatchedAfterDeploy" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testWithdrawBeforeDispatch" time="0.0" />
+  <testcase classname="rampadapter.FixedRampTest" name="testGetNegativeId" time="0.0" />
+  <system-out><![CDATA[IsDispatchedAtCreation test OK
+Get ID test ok
+Parking Bay Number Getter test OK
 Withdraw test OK
+Negative Parking Bay Number Getter test OK
+IsDispatchedAfterDispatchAndWithdraw test OK
+Dispatch After Dispatch test OK
 Dispatch test OK
-InvalidParkingBayNumber test OK
-ParkingBayNumber test OK
-InvalidId test OK
-InvalidId test OK
-Withdraw test OK
-Id test OK
-IsDispatched test OK
+Withdraw after Withdraw test OK
+IsDispatchedAfterDispatch test OK
+Withdraw Before Dispatch test OK
+Get Negative ID test ok
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
