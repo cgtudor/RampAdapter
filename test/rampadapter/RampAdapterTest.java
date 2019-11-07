@@ -104,6 +104,15 @@ public class RampAdapterTest {
     }
     
     @Test
+    public void testIsDispatchedAtCreation()
+    {
+        final AirportRamp ramp = new AirportMobileRamp("23CRESCENT", "AIRCREST-12");
+        final Ramp adapted = new AirportRampAdapter(ramp);
+        assertFalse(adapted.isDispatched());
+        System.out.println("IsDispatchedAtCreation test OK");
+    }
+    
+    @Test
     public void testWithdraw()
     {
         final AirportRamp ramp = new AirportMobileRamp("CRESCENT", "AIRCREST-12");

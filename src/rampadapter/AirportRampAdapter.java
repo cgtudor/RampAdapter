@@ -24,20 +24,13 @@ public class AirportRampAdapter implements Ramp{
     public int getId() {
         if(originalRamp.getSerialNumber() == null)
             return -1;
-        try 
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher(originalRamp.getSerialNumber()); 
+        if(m.find()) 
         {
-            Pattern p = Pattern.compile("\\d+");
-            Matcher m = p.matcher(originalRamp.getSerialNumber()); 
-            if(m.find()) 
-            {
-                return Integer.parseInt(m.group());
-            }
-            else
-            {
-                return -1;
-            }
+            return Integer.parseInt(m.group());
         }
-        catch(NumberFormatException e)
+        else
         {
             return -1;
         }

@@ -24,54 +24,47 @@ public class AirportRampAdapter implements Ramp{
     public int getId() {
 <span class="fc bfc" id="L25" title="All 2 branches covered.">        if(originalRamp.getSerialNumber() == null)</span>
 <span class="fc" id="L26">            return -1;</span>
-        try 
+<span class="fc" id="L27">        Pattern p = Pattern.compile(&quot;\\d+&quot;);</span>
+<span class="fc" id="L28">        Matcher m = p.matcher(originalRamp.getSerialNumber()); </span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if(m.find()) </span>
         {
-<span class="fc" id="L29">            Pattern p = Pattern.compile(&quot;\\d+&quot;);</span>
-<span class="fc" id="L30">            Matcher m = p.matcher(originalRamp.getSerialNumber()); </span>
-<span class="fc bfc" id="L31" title="All 2 branches covered.">            if(m.find()) </span>
-            {
-<span class="fc" id="L33">                return Integer.parseInt(m.group());</span>
-            }
-            else
-            {
-<span class="fc" id="L37">                return -1;</span>
-            }
+<span class="fc" id="L31">            return Integer.parseInt(m.group());</span>
         }
-<span class="nc" id="L40">        catch(NumberFormatException e)</span>
+        else
         {
-<span class="nc" id="L42">            return -1;</span>
+<span class="fc" id="L35">            return -1;</span>
         }
     }
 
     @Override
     public String dispatch() {
-<span class="fc" id="L48">        return originalRamp.deploy();</span>
+<span class="fc" id="L41">        return originalRamp.deploy();</span>
     }
 
     @Override
     public boolean isDispatched() {
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        return !originalRamp.isAvailable();</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        return !originalRamp.isAvailable();</span>
     }
 
     @Override
     public int getParkingBayNumber() {
-<span class="fc bfc" id="L58" title="All 2 branches covered.">        if(originalRamp.getParkingBay() == null)</span>
-<span class="fc" id="L59">            return -1;</span>
-<span class="fc" id="L60">        String parkingBay = originalRamp.getParkingBay();</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if(originalRamp.getParkingBay() == null)</span>
+<span class="fc" id="L52">            return -1;</span>
+<span class="fc" id="L53">        String parkingBay = originalRamp.getParkingBay();</span>
         try
         {
-<span class="fc" id="L63">            int pbNumber = Integer.parseInt(String.valueOf(parkingBay.substring(parkingBay.length()-2)));</span>
-<span class="fc" id="L64">            return pbNumber;</span>
+<span class="fc" id="L56">            int pbNumber = Integer.parseInt(String.valueOf(parkingBay.substring(parkingBay.length()-2)));</span>
+<span class="fc" id="L57">            return pbNumber;</span>
         }
-<span class="fc" id="L66">        catch(NumberFormatException e)</span>
+<span class="fc" id="L59">        catch(NumberFormatException e)</span>
         {
-<span class="fc" id="L68">            return -1;</span>
+<span class="fc" id="L61">            return -1;</span>
         }
     }
 
     @Override
     public boolean withdraw() {
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        return originalRamp.detach() != null;      </span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        return originalRamp.detach() != null;      </span>
     }
     
 }
